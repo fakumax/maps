@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-            TESTEO DE MAPAS
+            MapTiler 
         </h1>
         
         <div className={styles.grid} >
@@ -38,8 +38,8 @@ const Home: NextPage = () => {
         <button type="button" onClick={() => router.push('/arcgis')}>
           ArcGis Online
         </button>
-        
-          <p>testeo</p>
+      
+      
         </div>
       </main>
 
