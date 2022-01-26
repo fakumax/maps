@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { useRouter } from 'next/router'
-import Google  from '../src/components/googlemap'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { useRouter } from 'next/router';
+import Google from '../src/components/googlemap';
 const Home: NextPage = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <Head>
@@ -14,41 +14,28 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className={styles.grid}>
-        <button type='button' onClick={() => router.push("/google")}>
+        <button type="button" onClick={() => router.push('/google')}>
           Google Map
         </button>
-        <button type='button' onClick={() => router.push("/mapbox")}>
+        <button type="button" onClick={() => router.push('/mapbox')}>
           MapBox
         </button>
-        <button type='button' onClick={() => router.push("/maptiler")}>
-          Map Tiler
-        </button>
-        <button type='button' onClick={() => router.push("/zeemaps")}>
-          Zee Maps
-        </button>
-        <button type='button' onClick={() => router.push("/google")}>
+
+        <button type="button" onClick={() => router.push('/google')}>
           Google Map
-        </button>
-        <button type='button' onClick={() => router.push("/arcgis")}>
-          ArcGis Online
         </button>
       </nav>
       <main className={styles.main}>
-        <Google/>
+        <Google />
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="#" target="_blank" rel="noopener noreferrer">
           Powered by Enérgica City
-         
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
