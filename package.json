@@ -9,19 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.8",
+    "@chakra-ui/react": "^1.8.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@react-google-maps/api": "^2.7.0",
     "@types/dotenv": "^8.2.0",
     "dotenv": "^14.3.2",
-    "framer-motion": "^6.2.3",
+    "framer-motion": "^5",
     "google-map-react": "^2.1.10",
     "mapbox-gl": "^2.6.1",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-mapbox-gl": "^5.1.1"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/react": "17.0.38",

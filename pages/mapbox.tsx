@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+import MapBox from '../src/components/mapbox/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const Home: NextPage = () => {
@@ -30,10 +31,6 @@ const Home: NextPage = () => {
         <button type="button" onClick={() => router.push('/mapbox')}>
           MapBox
         </button>
-
-        <button type="button" onClick={() => router.push('/google')}>
-          Google Map
-        </button>
       </nav>
       <main className={styles.main}>
         <Map
@@ -51,6 +48,8 @@ const Home: NextPage = () => {
             <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
           </Layer>
         </Map>
+
+        <MapBox />
       </main>
 
       <footer className={styles.footer}>
