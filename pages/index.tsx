@@ -22,9 +22,7 @@ const Home: NextPage = () => {
             MapBox
           </button>
 
-          <button type="button" onClick={() => router.push('/google')}>
-            Google Map
-          </button>
+          <button type="button">Google Map</button>
 
           <button type="button" onClick={() => router.push('/google')}>
             Here Maps

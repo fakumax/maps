@@ -40,3 +40,9 @@ _Input to search location in react_
 ```sh
 react-map-gl-geocoder
 ```
+
+_Turf is a JavaScript library for spatial analysis._
+
+```sh
+yarn add @turf/turf
+```
