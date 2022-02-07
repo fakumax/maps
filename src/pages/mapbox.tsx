@@ -5,8 +5,9 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 // import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
-import MapBox from '../src/components/mapbox/mapbox';
-import { Container } from '@chakra-ui/react';
+import MapBox from '../components/mapbox/mapbox';
+import { Container, Box } from '@chakra-ui/react';
+import ToolbarMenu from '../components/Toolbar/ToolbarMenu';
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,9 @@ const Home: NextPage = () => {
         <meta name="description" content="MapBox App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Box pt={8}>
+        <ToolbarMenu />
+      </Box>
       <main className={styles.main}>
         <MapBox />
       </main>

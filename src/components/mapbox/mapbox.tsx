@@ -4,6 +4,11 @@ import React, { useState, useRef, useCallback } from 'react';
 import MapGL, { Marker, NavigationControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import Pin from '../draggableMarker/pin';
+import ReactMapboxGl from 'react-mapbox-gl';
+import DrawControl from 'react-mapbox-gl-draw';
+
+// Don't forget to import the CSS
+import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
 
 const MAPBOX_TOKEN = `${process.env.NEXT_PUBLIC_MAPBOX}`;
 
