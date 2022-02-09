@@ -29,11 +29,11 @@ yarn add mapbox-gl
 
 Removed
 
-<!-- _Input to search location_
+_Types to Typescript_
 
 ```sh
-yarn add @mapbox/mapbox-gl-geocoder
-``` -->
+yarn add @types/mapbox-gl
+```
 
 _Input to search location in react_
 

@@ -1,11 +1,13 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+
 import React, { useState, useRef, useCallback } from 'react';
 import MapGL, { Marker, NavigationControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
-import Pin from '../draggableMarker/pin';
 import ReactMapboxGl from 'react-mapbox-gl';
 import DrawControl from 'react-mapbox-gl-draw';
+
+import Pin from '../draggableMarker/pin';
 
 // Don't forget to import the CSS
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';

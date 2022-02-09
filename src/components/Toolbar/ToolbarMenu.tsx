@@ -8,6 +8,7 @@ const ToolbarMenu = () => {
         <Button colorScheme="blue">Polígono</Button>
         <Button colorScheme="red">Distancia</Button>
         <Button colorScheme="green">Marcador</Button>
+        <Button colorScheme="pink">Mi ubicación</Button>
       </ButtonGroup>
     </>
   );
