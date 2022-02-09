@@ -4,6 +4,11 @@ import React, { useState, useRef, useCallback } from 'react';
 import MapGL, { Marker, NavigationControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import Pin from '../draggableMarker/pin';
+import ReactMapboxGl from 'react-mapbox-gl';
+import DrawControl from 'react-mapbox-gl-draw';
+
+// Don't forget to import the CSS
+import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
 
 const MAPBOX_TOKEN = `${process.env.NEXT_PUBLIC_MAPBOX}`;
 
@@ -14,10 +19,7 @@ const mapbox = () => {
     zoom: 8,
   });
   const mapRef = useRef();
-  const handleViewportChange = useCallback(
-    (newViewport) => setViewport(newViewport),
-    []
-  );
+  const handleViewportChange = useCallback((newViewport) => setViewport(newViewport), []);
 
   // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
   const handleGeocoderViewportChange = useCallback((newViewport) => {
@@ -59,28 +61,10 @@ const mapbox = () => {
   const [events, logEvents] = useState({});
 
   return (
-    <div style={{ height: '80vh', width: '60vw' }}>
-      <MapGL
-        ref={mapRef}
-        {...viewport}
-        width="100%"
-        height="100%"
-        onViewportChange={handleViewportChange}
-        mapboxApiAccessToken={MAPBOX_TOKEN}
-      >
-        <Geocoder
-          mapRef={mapRef}
-          onViewportChange={handleGeocoderViewportChange}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
-          position="top-right"
-        />
-        <Marker
-          longitude={marker.longitude}
-          latitude={marker.latitude}
-          offsetTop={-20}
-          offsetLeft={-10}
-          draggable
-        >
+    <div style={{ height: '70vh', width: 'auto' }}>
+      <MapGL ref={mapRef} {...viewport} width="100%" height="100%" onViewportChange={handleViewportChange} mapboxApiAccessToken={MAPBOX_TOKEN}>
+        <Geocoder mapRef={mapRef} onViewportChange={handleGeocoderViewportChange} mapboxApiAccessToken={MAPBOX_TOKEN} position="top-right" />
+        <Marker longitude={marker.longitude} latitude={marker.latitude} offsetTop={-20} offsetLeft={-10} draggable>
           <Pin size={20} />
         </Marker>
         <div className="nav" style={navStyle}>

@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 
         <main className={styles.main}>
           <h1 className={styles.title}>TESTEO DE MAPAS</h1>
-          <button type="button" onClick={() => router.push('/mapbox')}>
+          <button type="button" onClick={() => router.push('/user')}>
             MapBox
           </button>
 
