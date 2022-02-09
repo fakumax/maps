@@ -8,28 +8,26 @@ import { useRouter } from 'next/router';
 import MapBox from '../components/mapbox/mapbox';
 import { Container, Box } from '@chakra-ui/react';
 import ToolbarMenu from '../components/Toolbar/ToolbarMenu';
+import Layout from '../components/Layout/Layout-user';
+import type { ReactElement } from 'react';
 
-const Home: NextPage = () => {
+const User: NextPage<Props> = () => {
   return (
-    <Container>
+    <>
       <Head>
         <meta name="description" content="MapBox App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box pt={8}>
+      <Box display="flex" alignItems="center" justifyContent="center" p={4}>
         <ToolbarMenu />
       </Box>
-      <main className={styles.main}>
-        <MapBox />
-      </main>
-
-      <footer className={styles.footer}>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          Powered by Enérgica City
-        </a>
-      </footer>
-    </Container>
+      <MapBox />
+    </>
   );
 };
 
-export default Home;
+export default User;
+
+User.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};

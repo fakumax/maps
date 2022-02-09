@@ -46,3 +46,9 @@ _Turf is a JavaScript library for spatial analysis._
 ```sh
 yarn add @turf/turf
 ```
+
+_React Icons_
+
+```sh
+yarn add react-icons
+```
