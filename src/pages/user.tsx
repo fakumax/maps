@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 // import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 // import MapBox from '../components/mapbox/mapbox';
-import MapBox from '../components/Map/Map';
+import MapBox from '../components/Map/MapV2';
 
 import { Container, Box } from '@chakra-ui/react';
 import ToolbarMenu from '../components/Toolbar/ToolbarMenu';
