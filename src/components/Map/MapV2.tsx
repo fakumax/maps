@@ -171,13 +171,20 @@ const MapV2 = () => {
       });
     });
 
-    // When a click event occurs on a feature in the states layer,
-    // open a popup at the location of the click, with description
-    // HTML from the click event's properties.
-    map.on('click', 'snotel-sites-circle', (e) => {
-      new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(e.features[0].properties.name).addTo(map);
-    });
 
+      
+  // When a click event occurs on a feature in the states layer,
+  // open a popup at the location of the click, with description
+  // HTML from the click event's properties.
+  map.on('click', 'snotel-sites-circle', (e) => {
+    new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.name)
+    .addTo(map);
+    });
+  
+  
+  
     // cleanup function to remove map on unmount
     return () => map.remove();
   }, []);
