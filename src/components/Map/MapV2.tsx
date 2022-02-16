@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import SnotelSites from '../../utils/santa_julia.json';
-import Tooltip from '../Tooltip/Tooltip';
+//import Tooltip from '../Tooltip/Tooltip';
 
 // import the mapbox styles
 // alternatively can use a link tag in the head of public/index.html
@@ -16,9 +16,13 @@ mapboxgl.accessToken = `${process.env.NEXT_PUBLIC_MAPBOX}`;
 const MapV2 = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
+
+  const [styleMap, SetstyleMap] = useState(null);
+
   const [lng, setLng] = useState(-70.6504502);
   const [lat, setLat] = useState(-33.4377756);
   const [zoom, setZoom] = useState(8);
+
   // this is where all of our map logic is going to live
   // adding the empty dependency array ensures that the map
   // is only rendered once
@@ -33,11 +37,11 @@ const MapV2 = () => {
       // style: 'mapbox://styles/mapbox/streets-v11',
       //style: 'mapbox://styles/mapbox/dark-v10',
       // style: 'mapbox://styles/mapbox/satellite-v9',
-
       center: [lng, lat],
       zoom: zoom,
-      pitch: 0, //inclinación
-      bearing: 0, //Rotación mapa
+      pitchWithRotate: false,
+      dragRotate: false,
+      touchZoomRotate: false,
     });
 
     // only want to work with the map after it has fully loaded
@@ -171,25 +175,18 @@ const MapV2 = () => {
       });
     });
 
-
-      
-  // When a click event occurs on a feature in the states layer,
-  // open a popup at the location of the click, with description
-  // HTML from the click event's properties.
-  map.on('click', 'snotel-sites-circle', (e) => {
-    new mapboxgl.Popup()
-    .setLngLat(e.lngLat)
-    .setHTML(e.features[0].properties.name)
-    .addTo(map);
+    // When a click event occurs on a feature in the states layer,
+    // open a popup at the location of the click, with description
+    // HTML from the click event's properties.
+    map.on('click', 'snotel-sites-circle', (e) => {
+      new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(e.features[0].properties.name).addTo(map);
     });
-  
-  
-  
+
     // cleanup function to remove map on unmount
     return () => map.remove();
   }, []);
 
-  return <div ref={mapContainer} style={{ width: '100%', height: '70vh' }} />;
+  return <div ref={mapContainer} style={{ width: '100%', height: 'auto' }} />;
 };
 
 export default MapV2;
