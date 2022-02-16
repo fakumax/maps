@@ -8,6 +8,18 @@ _Create a new Next App with Typescript_
 yarn create next-app --typescript
 ```
 
+_Sass_
+
+```sh
+yarn add sass
+```
+
+_Types Sass_
+
+```sh
+yarn add @types/sass
+```
+
 _Add ChakraUI Typescript_
 
 ```sh

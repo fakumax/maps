@@ -7,7 +7,7 @@ import SnotelSites from '../../utils/santa_julia.json';
 // alternatively can use a link tag in the head of public/index.html
 // see https://docs.mapbox.com/mapbox-gl-js/api/
 import 'mapbox-gl/dist/mapbox-gl.css';
-
+import styles from '@styles/Map.module.scss';
 // Grab the access token from your Mapbox account
 // I typically like to store sensitive things like this
 // in a .env file
@@ -186,7 +186,7 @@ const MapV2 = () => {
     return () => map.remove();
   }, []);
 
-  return <div ref={mapContainer} style={{ width: '100%', height: 'auto' }} />;
+  return <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />;
 };
 
 export default MapV2;
