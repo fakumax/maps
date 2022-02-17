@@ -10,8 +10,8 @@ import MapBox from '../components/Map/MapV2';
 
 import { Container, Box } from '@chakra-ui/react';
 import ToolbarMenu from '../components/Toolbar/ToolbarMenu';
-import Layout from '../components/Layout/Layout-user';
 import type { ReactElement } from 'react';
+import Layout from '../components/Layout/Layout-User';
 
 const User: NextPage<Props> = () => {
   return (
@@ -20,9 +20,7 @@ const User: NextPage<Props> = () => {
         <meta name="description" content="MapBox App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Box display="flex" alignItems="center" justifyContent="center" p={4}>
-        <ToolbarMenu />
-      </Box> */}
+
       <MapBox />
     </>
   );

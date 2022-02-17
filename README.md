@@ -64,3 +64,9 @@ _React Icons_
 ```sh
 yarn add react-icons
 ```
+
+_Chakra UI Icons_
+
+```sh
+yarn add @chakra-ui/icons
+```
