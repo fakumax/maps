@@ -8,6 +8,18 @@ _Create a new Next App with Typescript_
 yarn create next-app --typescript
 ```
 
+_Sass_
+
+```sh
+yarn add sass
+```
+
+_Types Sass_
+
+```sh
+yarn add @types/sass
+```
+
 _Add ChakraUI Typescript_
 
 ```sh
@@ -29,11 +41,11 @@ yarn add mapbox-gl
 
 Removed
 
-<!-- _Input to search location_
+_Types to Typescript_
 
 ```sh
-yarn add @mapbox/mapbox-gl-geocoder
-``` -->
+yarn add @types/mapbox-gl
+```
 
 _Input to search location in react_
 
@@ -51,4 +63,10 @@ _React Icons_
 
 ```sh
 yarn add react-icons
+```
+
+_Chakra UI Icons_
+
+```sh
+yarn add @chakra-ui/icons
 ```
