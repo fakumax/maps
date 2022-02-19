@@ -276,7 +276,7 @@ const MapV2 = () => {
     return () => map.remove();
   }, []);
 
-  return <div ref={mapContainer} style={{ width: '100%', height: '100vh' }} />;
+  return <div ref={mapContainer} className={styles.mapboxgl_map} />;
 };
 
 export default MapV2;
