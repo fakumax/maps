@@ -8,6 +8,7 @@ import SnotelSites from '../../utils/santa_julia.json';
 // see https://docs.mapbox.com/mapbox-gl-js/api/
 import 'mapbox-gl/dist/mapbox-gl.css';
 import styles from '@styles/Map.module.scss';
+import { Box } from '@chakra-ui/react';
 // Grab the access token from your Mapbox account
 // I typically like to store sensitive things like this
 // in a .env file
@@ -146,6 +147,7 @@ const MapV2 = () => {
       // source-layer can be grabbed from the tileset details page
       // in Mapbox studio
       // see https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#fill
+
       map.addLayer({
         id: 'avalanche-paths-fill',
         type: 'fill',

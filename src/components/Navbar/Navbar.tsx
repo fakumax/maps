@@ -33,12 +33,13 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box h="11vh">
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
+        minH={'11vh'}
+        py={{ base: 0 }}
+        zIndex={2}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
