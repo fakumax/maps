@@ -1,8 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import SnotelSites from '../../utils/santa_julia.json';
-//import Tooltip from '../Tooltip/Tooltip';
 
+import Plaga from '../../utils/Aphis_gossypil_Macrosiphum_sp_Pulgon.json';
+
+//import Tooltip from '../Tooltip/Tooltip';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 // import the mapbox styles
 // alternatively can use a link tag in the head of public/index.html
 // see https://docs.mapbox.com/mapbox-gl-js/api/
@@ -53,6 +57,30 @@ const MapV2 = () => {
 
     // CONTROL -- Full Screen Button.
     map.addControl(new mapboxgl.FullscreenControl());
+
+    // CONTROL -- Add geolocate control to the map.
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        // Transparent circle will be drawn around the user
+        showAccuracyCircle: false,
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true,
+      })
+    );
+
+    // CONTROL -- Add Ubication Geocoder control to the map.
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        //Marker
+        //mapboxgl: mapboxgl,
+      })
+    );
 
     // only want to work with the map after it has fully loaded
     // if you try to add sources and layers before the map has loaded
@@ -242,6 +270,15 @@ const MapV2 = () => {
         data: SnotelSites,
       });
 
+      /*
+      DATOS DE PLAGA
+      
+      */
+      map.addSource('plaga-aphis', {
+        type: 'geojson',
+        data: Plaga,
+      });
+
       // bus routes source
       // another example of using a geojson source
       // this time we are hitting an ESRI API that returns
@@ -306,6 +343,8 @@ const MapV2 = () => {
       // see https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#circle
 
       // Add a layer showing the state polygons.
+
+      /////////////////
       map.addLayer({
         id: 'snotel-sites-circle',
         type: 'fill',
@@ -315,6 +354,38 @@ const MapV2 = () => {
           'fill-outline-color': 'rgba(200, 100, 240, 1)',
         },
       });
+
+      //////////////////////////////////////
+      map.addLayer({
+        id: 'plaga-aphis-circle',
+        type: 'heatmap',
+        source: 'plaga-aphis',
+        paint: {
+          // assign color values be applied to points depending on their density
+          'heatmap-color': [
+            'interpolate',
+            ['linear'],
+            ['heatmap-density'],
+            0,
+            'rgba(236,222,239,0)',
+            0.2,
+            'rgb(208,209,230)',
+            0.4,
+            'rgb(166,189,219)',
+            0.6,
+            'rgb(103,169,207)',
+            0.8,
+            'rgb(28,144,153)',
+          ],
+          'heatmap-radius': {
+            stops: [
+              [11, 15],
+              [15, 20],
+            ],
+          },
+        },
+      });
+      ////////////////////////////////////////
       //**********************************/
       //COLOR---y forma de puntos--------
 
@@ -350,6 +421,24 @@ const MapV2 = () => {
         },
       });
 
+      ///////////////////////////
+      map.addLayer({
+        id: 'plaga-aphis-label',
+        type: 'symbol',
+        source: 'plaga-aphis',
+        layout: {
+          'text-field': ['get', 'Name'],
+          'text-size': 16,
+          'text-offset': [0, -1.5],
+        },
+        paint: {
+          'text-color': '#262626',
+          'text-halo-color': '#ffffff',
+          'text-halo-width': 0.5,
+        },
+      });
+      ///////////////////////////
+
       // bus routes - line layer
       // see https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#line
       map.addLayer({
@@ -381,10 +470,16 @@ const MapV2 = () => {
     // When a click event occurs on a feature in the states layer,
     // open a popup at the location of the click, with description
     // HTML from the click event's properties.
+
     map.on('click', 'snotel-sites-circle', (e) => {
       new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(e.features[0].properties.name).addTo(map);
     });
+    /////////////
+    map.on('click', 'plaga-aphis-circle', (e) => {
+      new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(e.features[0].properties.name).addTo(map);
+    });
 
+    /////////////
     // cleanup function to remove map on unmount
     return () => map.remove();
   }, []);
