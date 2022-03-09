@@ -1,0 +1,131 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "Aphis gossypil/Macrosiphum sp (Pulgon)"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id01",
+        "planta": 1,
+        "cant": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15181, -33.36228]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id02",
+        "planta": 2,
+        "cant": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15122, -33.36215]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id03",
+        "planta": 3,
+        "cant": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15097, -33.36237]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id04",
+        "planta": 4,
+        "cant": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15182, -33.36355]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id05",
+        "planta": 5,
+        "cant": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15148, -33.36251]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id06",
+        "planta": 6,
+        "cant": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15144, -33.36326]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id07",
+        "planta": 7,
+        "cant": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15105, -33.36344]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id08",
+        "planta": 8,
+        "cant": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15081, -33.36329]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id09",
+        "planta": 9,
+        "cant": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.15044, -33.36359]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "id10",
+        "planta": 10,
+        "cant": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.1502, -33.3632]
+      }
+    }
+  ]
+}
