@@ -101,7 +101,7 @@ const MapV2 = () => {
           source: 'plagas',
           maxzoom: 9,
           paint: {
-            // Increase the heatmap weight based on frequency and property magnitude
+            // Increase the heatmap weight based on frequency and property quantity
             'heatmap-weight': ['interpolate', ['linear'], ['get', 'cant'], 0, 0, 6, 1],
             // Increase the heatmap color weight weight by zoom level
             // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -152,10 +152,13 @@ const MapV2 = () => {
               0,
               'rgba(33,102,172,0)',
               1,
-              'rgba(211,253,0,0)',
-              2,
+              //VERDE
               'rgb(5,253,0)',
+              2,
+              //AMARILLO
+              'rgb(211,253,0)',
               3,
+              //ROJO
               'rgb(253,0,0)',
               4,
               'rgb(239,138,98)',
@@ -164,7 +167,7 @@ const MapV2 = () => {
               6,
               'rgb(178,24,43)',
             ],
-            'circle-stroke-color': 'white',
+            'circle-stroke-color': 'green', //'white' or color
             'circle-stroke-width': 1,
             // Transition from heatmap to circle layer by zoom level
             'circle-opacity': ['interpolate', ['linear'], ['zoom'], 1, 0, 8, 1],
