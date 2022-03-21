@@ -219,7 +219,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'SubTest1',
         subLabel: '................',
-        href: '#',
+        href: '/',
       },
       {
         label: 'SubTest1.2',
@@ -244,11 +244,11 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: 'Test3',
-    href: '#',
+    label: 'Fertilización',
+    href: '/fertilizacion',
   },
   {
-    label: 'Test4',
-    href: '#',
+    label: 'Plagas',
+    href: '/plagas',
   },
 ];
