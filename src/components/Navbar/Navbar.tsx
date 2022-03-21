@@ -33,12 +33,13 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box h="11vh">
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
+        minH={'11vh'}
+        py={{ base: 0 }}
+        zIndex={2}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
@@ -60,6 +61,7 @@ export default function WithSubnavigation() {
 
         <HStack spacing={{ base: '0', md: '6' }}>
           <IconButton size="lg" variant="ghost" aria-label="open menu" icon={<FiBell />} />
+          <ColorModeSwitcher justifySelf="flex-end" />
           <Flex alignItems={'center'}>
             <Menu>
               <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: 'none' }}>
@@ -71,7 +73,7 @@ export default function WithSubnavigation() {
                   <VStack display={{ base: 'none', md: 'flex' }} alignItems="flex-start" spacing="1px" ml="2">
                     <Text fontSize="sm">Justina Clark</Text>
                     <Text fontSize="xs" color="gray.600">
-                      Admin
+                      Administrador
                     </Text>
                   </VStack>
                   <Box display={{ base: 'none', md: 'flex' }}>
@@ -80,11 +82,11 @@ export default function WithSubnavigation() {
                 </HStack>
               </MenuButton>
               <MenuList bg={useColorModeValue('white', 'gray.900')} borderColor={useColorModeValue('gray.200', 'gray.700')}>
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>Settings</MenuItem>
-                <MenuItem>Billing</MenuItem>
+                <MenuItem>Perfil</MenuItem>
+                <MenuItem>Configuración</MenuItem>
+                <MenuItem>Pagos</MenuItem>
                 <MenuDivider />
-                <MenuItem>Sign out</MenuItem>
+                <MenuItem>Salir</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
@@ -212,41 +214,41 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'Test1',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
+        label: 'SubTest1',
+        subLabel: '................',
+        href: '/',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'SubTest1.2',
+        subLabel: '................',
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Test2',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
+        label: 'SubTest2',
+        subLabel: '................',
         href: '#',
       },
       {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
+        label: 'SubTest2.1',
+        subLabel: '................',
         href: '#',
       },
     ],
   },
   {
-    label: 'Learn Design',
-    href: '#',
+    label: 'Fertilización',
+    href: '/fertilizacion',
   },
   {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'Plagas',
+    href: '/plagas',
   },
 ];
